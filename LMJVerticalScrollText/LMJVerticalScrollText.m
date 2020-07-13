@@ -76,14 +76,16 @@
 }
 
 - (void)clickAction{
-    //当没有数据不进行点击效果
-    if ([_textDataArr count] > 0) {
-        return;
-    }
-    
-    if ([self isCurrentViewControllerVisible:[self viewController]] && self.delegate && [self.delegate respondsToSelector:@selector(verticalScrollText:clickIndex:content:)]) {
-        [self.delegate verticalScrollText:self clickIndex:_index content:[_textDataArr[_index] copy]];
-    }
+    NSLog(@"当前长度%li", _textDataArr.count);
+//    //当没有数据不进行点击效果
+//    if ([_textDataArr count] > 0) {
+//        NSLog(@"没有数据可以点击");
+//        return;
+//    }
+//
+//    if ([self isCurrentViewControllerVisible:[self viewController]] && self.delegate && [self.delegate respondsToSelector:@selector(verticalScrollText:clickIndex:content:)]) {
+//        [self.delegate verticalScrollText:self clickIndex:_index content:[_textDataArr[_index] copy]];
+//    }
 }
 
 #pragma mark - Set

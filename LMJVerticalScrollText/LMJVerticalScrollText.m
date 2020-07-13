@@ -76,6 +76,11 @@
 }
 
 - (void)clickAction{
+    //当没有数据不进行点击效果
+    if ([_textDataArr count] > 0) {
+        return;
+    }
+    
     if ([self isCurrentViewControllerVisible:[self viewController]] && self.delegate && [self.delegate respondsToSelector:@selector(verticalScrollText:clickIndex:content:)]) {
         [self.delegate verticalScrollText:self clickIndex:_index content:[_textDataArr[_index] copy]];
     }
